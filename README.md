@@ -25,14 +25,6 @@ You will need to [install QGroundControl](https://docs.qgroundcontrol.com/master
 
 Once this is done, use the following steps to install the bootloader:
 1. Connect the board to your computer using a USB-C cable, while pushing the DFU button (the small button on top of the board).
-2. Open a terminal on the folder with the cloned repository, and run the following command:
-```
-dfu-util -a 0 --dfuse-address 0x08000000:force:mass-erase:leave -D Compiled\ PX4-Autopilot/holybro_kakuteh7v2_bootloader.bin
-```
-The purpose of this command is to erase the board's flash and the install the bootloader. This will throw an error, because there is a part of the flash that can't be erased. Ignore it and proceed (do not close the terminal).
+2. Open a terminal on the folder with the cloned repository, and run the following command: ``` dfu-util -a 0 --dfuse-address 0x08000000:force:mass-erase:leave -D Compiled\ PX4-Autopilot/holybro_kakuteh7v2_bootloader.bin ``` The purpose of this command is to erase the board's flash and the install the bootloader. This will throw an error, because there is a part of the flash that can't be erased. Ignore it and proceed (do not close the terminal).
 3. Disconnect the board and connect it again while pushing the DFU button.
-4. Go back to the terminal and run the following command:
-```
-dfu-util -a 0 --dfuse-address 0x08000000 -D Compiled\ PX4-Autopilot/holybro_kakuteh7v2_bootloader.bin
-```
-Once it is finished, you can disconnect the board.
+4. Go back to the terminal and run the following command: ``` dfu-util -a 0 --dfuse-address 0x08000000 -D Compiled\ PX4-Autopilot/holybro_kakuteh7v2_bootloader.bin ``` Once it is finished, you can disconnect the board.
