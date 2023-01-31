@@ -36,3 +36,8 @@ After installing the bootloader, you can proceed with installing the Firmaware. 
 
 ## Connecting RC and WiFi radios
 TODO
+
+Use a spectrum radio with
+
+
+## Printing antena support
