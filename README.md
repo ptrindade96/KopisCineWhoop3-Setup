@@ -13,14 +13,14 @@ To learn more about this quadrotor and its specifications, consult the [Holybro 
 
 ## Installing PX4 autopilot on the Kakute H7 v2
 
-The first step in setting up the drone for use in the arena, is to install the PX4-Autopilot on the Kakute H7 v2 flight controller. A special version prepared for use in this drone and indoor flight can be found at a [forked PX4 repository](https://github.com/ptrindade96/PX4-Autopilot-Kopis_Cinewhoop). However, a compiled version of the firmware is available in this repository, for ease of use.
+The first step in setting up the drone for use in the arena, is to install the PX4-Autopilot on the Kakute H7 v2 flight controller. A special version prepared for use in this drone and indoor flight is available in this repository, already compiled, for ease of use.
 
 ![Holybro Kakute H7 v2](./Pictures/KakuteH7v2.jpg)
 
 ### Ubuntu
 To install it, begin by cloning this repository and installing some required dependencies, as follows:
 ```
-git clone https://github.com/ptrindade96/KopisCineWhoop3-Setup.git --recursive
+git clone https://github.com/ptrindade96/KopisCineWhoop3-Setup.git
 sudo apt install dfu-util
 ```
 You will need to [install QGroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html).
