@@ -35,9 +35,17 @@ After installing the bootloader, you can proceed with installing the Firmaware. 
 
 
 ## Connecting RC and WiFi radios
-TODO
+First thing you need to do is to remove the top plate on the drone, so that you can access the flight controller. It is also useful to remove the ducts and propellers, so that it is easier to work.
 
-Use a spectrum radio with
+![CineWhoop3 without top plate, ducts and propellers.](./Pictures/KopisCineWhoop3 - RC.jpg)
+
+Here at DSOR Lab, we typically use two types of RC radios: Spektrum and FRSky. There are several Spektrum RC transmitters available. For the FRSky, a Taranis RC Transmitter is available at Alameda and another one is available at Taguspark. Connections are similar, however, Spektrum RCs are supplied with 3.3V in contrast with the 5V of the FRSky RCs. Just connect the RC's VCC port to the corresponding port in the flight controller, the GND and the TX on the RC to the R6 port of the flight controller, as exemplified in the following pictures.
+
+![RC connections for Spektrum receiver](./Pictures/KakuteH7_Top_Spektrum.png)
+*RC connections for Spektrum receiver*
+
+![RC connections for FRSky receiver](./Pictures/KakuteH7_Top_FRSky.png)
+*RC connections for FRSky receiver*
 
 
 ## Printing antena support

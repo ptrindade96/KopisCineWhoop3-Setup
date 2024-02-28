@@ -1,0 +1,106 @@
+#!/bin/sh
+#
+# @name Holybro Kopis CineWhoop 3 - Mocap
+#
+# @type Quadrotor x
+# @class Copter
+#
+# @maintainer Pedro Trindade <pedro.trindade@isr.tecnico.ulisboa.pt>
+#
+# @board bitcraze_crazyflie exclude
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+
+### Battery parameters
+param set-default BAT1_N_CELLS 4
+
+
+### EKF2 Parameters
+param set-default SYS_MC_EST_GROUP 2
+param set-default EKF2_MAG_TYPE 5
+param set-default EKF2_HGT_REF 0
+param set-default EKF2_AID_MASK 24
+param set-default EKF2_EVA_NOISE 3
+param set-default EKF2_EVP_NOISE 0.03
+param set-default EKF2_EV_DELAY 20
+param set-default EKF2_GPS_CTRL 0
+param set-default EKF2_HGT_REF 0
+param set-default EKF2_MAG_TYPE 5
+param set-default EKF2_EV_CTRL 11
+param set-default EKF2_EV_NOISE_MD 1
+param set-default EKF2_HGT_REF 3
+param set-default EKF2_EV_NOISE_MD 1
+param set-default EKF2_MULTI_IMU 0
+param set-default EKF2_MULTI_MAG 0
+param set-default SENS_IMU_MODE 1
+param set-default SENS_MAG_MODE 1
+param set-default SYS_HAS_GPS 0
+param set-default SYS_HAS_MAG 0
+
+
+### Attitude and Rate Controller Parameters
+## Rate Controller
+# Roll rate PID gains
+param set-default MC_ROLLRATE_P 0.1
+param set-default MC_ROLLRATE_I 0.25
+param set-default MC_ROLLRATE_D 0.0011
+
+# Pitch rate PID gains
+param set-default MC_PITCHRATE_P 0.1
+param set-default MC_PITCHRATE_I 0.25
+param set-default MC_PITCHRATE_D 0.0011
+
+# Maximum rates
+param set-default MC_ROLLRATE_MAX 1600
+param set-default MC_PITCHRATE_MAX 1600
+param set-default MC_YAWRATE_MAX 1000
+
+## Attitude Controller
+# Gains
+param set-default MC_ROLL_P 10
+param set-default MC_PITCH_P 10
+param set-default MC_YAW_P 4
+
+
+### Auto mode parameters
+param set-default MPC_MAN_TILT_MAX 60       # Maximum tilt angle
+param set-default MPC_THR_HOVER 0.22        # Thrust percentage at hover [0,1]
+param set-default THR_MDL_FAC 0.2
+
+
+### Gyro parameter cutoff frequency (this data is used for the rate controllers)
+param set-default IMU_DGYRO_CUTOFF 50
+param set-default IMU_GYRO_CUTOFF 90
+
+
+### Drone geometry - Defines the rotor positions with respect to the center mass
+param set-default CA_ROTOR_COUNT 4
+param set-default CA_ROTOR0_PX 0.15
+param set-default CA_ROTOR0_PY 0.15
+param set-default CA_ROTOR1_PX -0.15
+param set-default CA_ROTOR1_PY -0.15
+param set-default CA_ROTOR2_PX 0.15
+param set-default CA_ROTOR2_PY -0.15
+param set-default CA_ROTOR2_KM -0.05
+param set-default CA_ROTOR3_PX -0.15
+param set-default CA_ROTOR3_PY 0.15
+param set-default CA_ROTOR3_KM -0.05
+
+
+### Set actuator calibration parameters - Define signal for each motor
+param set-default PWM_MAIN_TIM0 -2      # Use DSHOT for ESC
+param set-default PWM_MAIN_TIM1 -2      # Use DSHOT for ESC
+param set-default PWM_MAIN_FUNC1 104
+param set-default PWM_MAIN_FUNC2 101
+param set-default PWM_MAIN_FUNC3 102
+param set-default PWM_MAIN_FUNC4 103
+
+
+### Specific board parameters
+param set-default CBRK_BUZZER 782097    # To disable buzzer as much as possible
+param set-default SER_TEL1_BAUD 921600  # Baudrate for ESP communication
+param set-default MAV_0_RATE 80000      # Max transfer rate (bits/s) over serial
+param set-default MAV_0_MODE 1          # Mode for MAVLINK stream
+param set-default NAV_RCL_ACT 3         # Land when RC is lost

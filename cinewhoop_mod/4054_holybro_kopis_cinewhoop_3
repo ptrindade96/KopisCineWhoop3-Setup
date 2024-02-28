@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# @name Holybro Kopis CineWhoop 3
+#
+# @type Quadrotor x
+# @class Copter
+#
+# @maintainer Pedro Trindade <pedro.trindade@isr.tecnico.ulisboa.pt>
+#
+# @board bitcraze_crazyflie exclude
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+param set-default BAT1_N_CELLS 4
+
+# use the Q attitude estimator, it works w/o mag or GPS.
+param set-default SYS_MC_EST_GROUP 3
+param set-default ATT_ACC_COMP 0
+param set-default ATT_W_ACC 0.4000
+param set-default ATT_W_GYRO_BIAS 0.0000
+
+# Set attitude controller parameters
+param set-default MC_ROLL_P 10
+param set-default MC_ROLLRATE_P 0.1
+param set-default MC_ROLLRATE_I 0.25
+param set-default MC_ROLLRATE_D 0.0011
+param set-default MC_PITCH_P 10
+param set-default MC_PITCHRATE_P 0.1
+param set-default MC_PITCHRATE_D 0.0011
+param set-default MC_YAW_P 4
+
+param set-default MC_ROLLRATE_MAX 1800      # Max value
+param set-default MC_PITCHRATE_MAX 1800     # Max value
+param set-default MC_YAWRATE_MAX 1000
+
+param set-default MPC_MAN_TILT_MAX 60
+
+param set-default THR_MDL_FAC 0.3
+param set-default PWM_MAIN_TIM0 -2
+param set-default PWM_MAIN_TIM1 -2
+
+param set-default MPC_THR_HOVER 0.22
+
+# enable high-rate logging profile (helps with tuning)
+param set-default SDLOG_PROFILE 19
+
+param set-default CBRK_BUZZER 782097
+param set-default SER_TEL1_BAUD 921600
+param set-default MAV_0_RATE 80000
+param set-default MAV_0_MODE 1
+
+param set-default IMU_DGYRO_CUTOFF 50
+param set-default IMU_GYRO_CUTOFF 90
+
+param set-default CA_ROTOR_COUNT 4
+param set-default CA_ROTOR0_PX 0.15
+param set-default CA_ROTOR0_PY 0.15
+param set-default CA_ROTOR1_PX -0.15
+param set-default CA_ROTOR1_PY -0.15
+param set-default CA_ROTOR2_PX 0.15
+param set-default CA_ROTOR2_PY -0.15
+param set-default CA_ROTOR2_KM -0.05
+param set-default CA_ROTOR3_PX -0.15
+param set-default CA_ROTOR3_PY 0.15
+param set-default CA_ROTOR3_KM -0.05
